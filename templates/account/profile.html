@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}My Profile - ShopClub{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="mb-4"><i class="bi bi-person-circle"></i> My Profile</h1>
+
+    <div class="row">
+        <!-- Profile Sidebar -->
+        <div class="col-lg-3 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    {% if user.profile.avatar %}
+                    <img src="{{ user.profile.avatar.url }}" class="rounded-circle mb-3" alt="{{ user.username }}" style="width: 120px; height: 120px; object-fit: cover;">
+                    {% else %}
+                    <i class="bi bi-person-circle display-1 text-muted mb-3"></i>
+                    {% endif %}
+                    <h5>{{ user.get_full_name|default:user.username }}</h5>
+                    <p class="text-muted">{{ user.email }}</p>
+                </div>
+            </div>
+
+            <div class="list-group mt-3">
+                <a href="#profile-info" class="list-group-item list-group-item-action active" data-bs-toggle="list">
+                    <i class="bi bi-person"></i> Profile Information
+                </a>
+                <a href="#change-password" class="list-group-item list-group-item-action" data-bs-toggle="list">
+                    <i class="bi bi-key"></i> Change Password
+                </a>
+                <a href="{% url 'orders:order_list' %}" class="list-group-item list-group-item-action">
+                    <i class="bi bi-bag"></i> My Orders
+                </a>
+            </div>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="col-lg-9">
+            <div class="tab-content">
+                <!-- Profile Information -->
+                <div class="tab-pane fade show active" id="profile-info">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Profile Information</h5>
+                        </div>
+                        <div class="card-body">
+                            <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="first_name" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="first_name" name="first_name" value="{{ user.first_name }}">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="last_name" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="last_name" name="last_name" value="{{ user.last_name }}">
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" readonly>
+                                    
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" value="{{ user.profilephone }}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="bio" class="form-label">Bio</label>
+                                    <textarea class="form-control" id="bio" name="bio" rows="3">{{ user.profile.bio }}</textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="avatar" class="form-label">Profile Picture</label>
+                                    <input type="file" class="form-control" id="avatar" name="avatar" accept="image/*">
+                                </div>
+
+                                <hr>
+
+                                <button type="submit" name="update_profile" class="btn btn-primary">
+                                    <i class="bi bi-save"></i> Save Changes
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Change Password -->
+                <div class="tab-pane fade" id="change-password">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Change Password</h5>
+                        </div>
+                        <div class="card-body">
+                            <form method="post">
+                                {% csrf_token %}
+                                
+                                <div class="mb-3">
+                                    <label for="old_password" class="form-label">Current Password</label>
+                                    <input type="password" class="form-control" id="old_password" name="old_password" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="new_password1" class="form-label">New Password</label>
+                                    <input type="password" class="form-control" id="new_password1" name="new_password1" required>
+                                    <small class="text-muted">Password must be at least 8 characters</small>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="new_password2" class="form-label">Confirm New Password</label>
+                                    <input type="password" class="form-control" id="new_password2" name="new_password2" required>
+                                </div>
+
+                                <button type="submit" name="change_password" class="btn btn-primary">
+                                    <i class="bi bi-key"></i> Update Password
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
