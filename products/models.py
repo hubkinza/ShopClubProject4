@@ -3,7 +3,6 @@ Product models for ShopClub
 """
 from django.db import models
 from django.contrib.auth.models import User
-from django_resized import ResizedImageField
 from django.urls import reverse
 
 class Category(models.Model):
@@ -31,10 +30,8 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    image = ResizedImageField(
-        size=[500, 500],
-        quality=85,
-        upload_to='products/',
+    image = models.ImageField(
+        upload_to='products/',  # Cloudinary path
         blank=True,
         null=True
     )

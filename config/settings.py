@@ -4,19 +4,20 @@ Django settings for ShopClub project.
 
 from pathlib import Path
 from decouple import config
-import dj_database_url
 import os
+import dj_database_url
 
-# Build paths inside the project
+# Build paths
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Security Settings
+# Security
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-change-this-in-production')
 DEBUG = config('DEBUG', default=True, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
 
-# Application definition
+# Applications
 INSTALLED_APPS = [
+    # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -24,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    
+
     # Third-party apps
     'allauth',
     'allauth.account',
@@ -34,7 +35,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'django_resized',
-    
+
     # Local apps
     'products',
     'orders',
@@ -43,7 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # After SecurityMiddleware
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -74,7 +75,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# Database Configuration
+# Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -100,7 +101,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JS)
+# Static files
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
@@ -110,10 +111,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-# Cloudinary for media (production) and static if needed
+# Cloudinary configuration
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 
-# Use local storage in development, Cloudinary in production
+# Use local media in development, Cloudinary in production
 if DEBUG:
     DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 else:
@@ -122,13 +123,12 @@ else:
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Django Allauth Settings
+# Django Allauth
 SITE_ID = 1
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
-
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
@@ -140,19 +140,19 @@ LOGOUT_REDIRECT_URL = '/'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
-# Stripe Configuration
+# Stripe
 STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY', default='')
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY', default='')
 STRIPE_WEBHOOK_SECRET = config('STRIPE_WEBHOOK_SECRET', default='')
 
-# Email Configuration (Development)
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Email
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # dev
 EMAIL_HOST = config('EMAIL_HOST', default='smtp.gmail.com')
 EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 
-# Session Configuration
-SESSION_COOKIE_AGE = 86400  # 1 day
+# Session
+SESSION_COOKIE_AGE = 86400
 SESSION_SAVE_EVERY_REQUEST = True
