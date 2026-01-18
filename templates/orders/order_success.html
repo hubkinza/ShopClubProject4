@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Order Confirmed - ShopClub{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body text-center py-5">
+                    <i class="bi bi-check-circle-fill text-success display-1 mb-4"></i>
+                    <h1 class="mb-3">Order Confirmed!</h1>
+                    <p class="lead text-muted mb-4">Thank you for your purchase. Your order has been successfully placed.</p>
+                    
+                    <div class="alert alert-info">
+                        <strong>Order Number:</strong> {{ order.order_number }}<br>
+                        <strong>Total:</strong> £{{ order.total_amount|floatformat:2 }}
+                    </div>
+
+                    <p class="text-muted">A confirmation email has been sent to <strong>{{ order.email }}</strong></p>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+                        <a href="{% url 'orders:order_detail' order.order_number %}" class="btn btn-primary">
+                            <i class="bi bi-receipt"></i> View Order Details
+                        </a>
+                        <a href="{% url 'products:home' %}" class="btn btn-outline-secondary">
+                            <i class="bi bi-house"></i> Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
