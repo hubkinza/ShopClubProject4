@@ -20,10 +20,10 @@
 
 ShopClub provides users with:
 -  **Easy Shopping Experience**: Browse products by category, search, and filter by price
--  **Secure Payments**: Industry-standard Stripe integration for safe transactions
--  **User Accounts**: Save shipping addresses and track order history
--  **Order Management**: Real-time order status and payment tracking
--  **Data Security**: Protected user information and secure authentication
+-  **Secure Payments**
+-  **User Accounts**
+-  **Order Management**
+
 
 **Why Users Need Accounts:**
 - Save shipping addresses for faster checkout
@@ -42,8 +42,7 @@ ShopClub provides users with:
 -   Product browsing with category filters
 -   Shopping cart with quantity management
 -   Secure Stripe checkout integration
--   Order history and tracking
--   User profile management
+-   Order history 
 -   Payment success/failure feedback
 
 ### Admin Features
@@ -57,7 +56,6 @@ ShopClub provides users with:
 -   Staff-only access to product management
 -   Environment variables for sensitive data
 -   DEBUG mode disabled in production
--   CSRF protection on all forms
 -   Password validation and hashing
 
 ---
@@ -174,8 +172,8 @@ shopclub/
 ####   Forms with Validation
  
 - **ProductForm**: Create/edit products with validation (slug uniqueness, price format)
-- **CheckoutForm**: Shipping information with email/phone validation
-- **CustomSignupForm**: User registration with password matching and address validation
+- **CheckoutForm**: Shipping information with email/phone
+- **CustomSignupForm**: User registration with password matching 
 
 **Code Location:**
 - `products/forms.py` - Product management form
@@ -571,7 +569,7 @@ This README includes:
 **Any future date for expiry, any 3 digits for CVC**
 
 ---
-## Installation & Setup
+# Installation & Setup
 
 ### Prerequisites
 - Python 3.11.14
@@ -643,12 +641,9 @@ python manage.py runserver
 
 Visit: `http://127.0.0.1:8000`
 
-## Prerequisites
-- Ubuntu server (AWS EC2 or similar)
-
 ---
 
-## Deployment
+# Deployment
 
 ### AWS EC2 Deployment Procedure
 
@@ -863,6 +858,7 @@ sudo systemctl restart nginx
 
 ### Special Thanks
 - All content creators whose tutorials and examples helped in building ShopClub
+
 
 
 
