@@ -19,11 +19,11 @@
 ## Purpose & Value
 
 ShopClub provides users with:
-- 🛍️ **Easy Shopping Experience**: Browse products by category, search, and filter by price
-- 💳 **Secure Payments**: Industry-standard Stripe integration for safe transactions
-- 👤 **User Accounts**: Save shipping addresses and track order history
-- 📦 **Order Management**: Real-time order status and payment tracking
-- 🔒 **Data Security**: Protected user information and secure authentication
+-  **Easy Shopping Experience**: Browse products by category, search, and filter by price
+-  **Secure Payments**: Industry-standard Stripe integration for safe transactions
+-  **User Accounts**: Save shipping addresses and track order history
+-  **Order Management**: Real-time order status and payment tracking
+-  **Data Security**: Protected user information and secure authentication
 
 **Why Users Need Accounts:**
 - Save shipping addresses for faster checkout
@@ -418,7 +418,7 @@ Product
 - Media files accessible
 - All features tested on production
 
-**Production URL:** `http://YOUR-EC2-IP`
+**Production URL:** `http:// -EC2-IP`
 
 **Testing Checklist:**
 -   Homepage loads
@@ -583,7 +583,7 @@ This README includes:
 
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/shopclub.git
+git clone https://github.com/ username/shopclub.git
 cd shopclub
 ```
 
@@ -605,19 +605,19 @@ touch .env
 
 Add the following to `.env`:
 ```env
-SECRET_KEY=your-secret-key-here
+SECRET_KEY= -secret-key-here
 DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1
 
-DB_NAME=kinzaqureshi_shopclub
-DB_USER=kinzaqureshi
-DB_PASSWORD=Shopclub123
-DB_HOST=postgresql-kinzaqureshi.alwaysdata.net
+DB_NAME=xxxxx_shopclub
+DB_USER=xxxxxxx
+DB_PASSWORD=xxxxxx
+DB_HOST=postgresql-xxxxxxxxx.alwaysdata.net
 DB_PORT=5432
 
-STRIPE_PUBLISHABLE_KEY=pk_test_your_key
-STRIPE_SECRET_KEY=sk_test_your_key
-STRIPE_WEBHOOK_SECRET=
+STRIPE_PUBLISHABLE_KEY=pk_test_ _key
+STRIPE_SECRET_KEY=sk_test_ _key
+
 ```
 
 5. **Run Migrations**
@@ -656,14 +656,14 @@ Visit: `http://127.0.0.1:8000`
 - **AMI:** Ubuntu Server 22.04 LTS
 - **Instance Type:** t2.micro (Free tier)
 - **Security Groups:** 
-  - SSH (22) - Your IP
+  - SSH (22) -   IP
   - HTTP (80) - 0.0.0.0/0
   - Custom TCP (8000) - 0.0.0.0/0
 
 #### 2. Connect to EC2
 ```bash
 chmod 400 shopclub-key.pem
-ssh -i shopclub-key.pem ubuntu@YOUR-EC2-IP
+ssh -i shopclub-key.pem ubuntu@ -EC2-IP
 ```
 
 #### 3. Install Dependencies
@@ -687,10 +687,10 @@ pip install gunicorn
 
 
 
-### Clone your repository
+### Clone   repository
 ```bash
 cd ~
-git clone <your-repo-url>
+git clone < -repo-url>
 cd ShopClubProject4
 ```
 
@@ -712,8 +712,8 @@ nano config/settings.py
 
 Update the following:
 - `DEBUG = False`
-- `ALLOWED_HOSTS = ['your-domain.com', 'your-ip-address']`
-- Configure your database settings
+- `ALLOWED_HOSTS = [' -domain.com', ' -ip-address']`
+- Configure   database settings
 - Set a strong `SECRET_KEY`
 
 ### Run migrations
@@ -769,7 +769,7 @@ sudo nano /etc/nginx/sites-available/shopclub
 ```nginx
 server {
     listen 80;
-    server_name your-domain.com your-ip-address;
+    server_name  -domain.com  -ip-address;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     
@@ -837,6 +837,7 @@ sudo tail -n 50 /var/log/nginx/access.log
 ```bash
 sudo systemctl restart nginx
 ```
+
 
 
 
