@@ -1,7 +1,8 @@
 
 # ShopClub - E-Commerce Django Application
 
-<img width="2940" height="1588" alt="image" src="https://github.com/user-attachments/assets/41047133-5fe0-4a53-ba40-2a3c64c79538" />
+<img width="1024" height="547" alt="image" src="https://github.com/user-attachments/assets/232934c5-b5a4-47a7-a408-2f63967cfa51" />
+
 
 
 
@@ -94,6 +95,17 @@ ShopClub provides users with:
 
 ### Homepage
 <img width="2940" height="1580" alt="image" src="https://github.com/user-attachments/assets/1554af41-cd9d-4fc8-b6ae-deb51cf37445" />
+
+### Profile
+<img width="2926" height="1530" alt="image" src="https://github.com/user-attachments/assets/f1e8c71f-97d7-493f-a2c9-e6766949f949" />
+
+### Login
+<img width="2940" height="1534" alt="image" src="https://github.com/user-attachments/assets/28382ecb-095f-47a7-bc27-d83543e469c8" />
+
+
+### SignUp
+
+<img width="2940" height="1590" alt="image" src="https://github.com/user-attachments/assets/b4dcfdcb-7db8-4141-9554-47ad22bb64e6" />
 
 
 ### Product Catalog
@@ -825,6 +837,7 @@ sudo tail -n 50 /var/log/nginx/access.log
 ```bash
 sudo systemctl restart nginx
 ```
+
 
 
 
