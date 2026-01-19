@@ -37,28 +37,28 @@ ShopClub provides users with:
 ## Features
 
 ### User Features
-- ✅ User registration with shipping address collection
-- ✅ Login/logout functionality with styled pages
-- ✅ Product browsing with category filters
-- ✅ Shopping cart with quantity management
-- ✅ Secure Stripe checkout integration
-- ✅ Order history and tracking
-- ✅ User profile management
-- ✅ Payment success/failure feedback
+- User registration with shipping address collection
+-   Login/logout functionality with styled pages
+-   Product browsing with category filters
+-   Shopping cart with quantity management
+-   Secure Stripe checkout integration
+-   Order history and tracking
+-   User profile management
+-   Payment success/failure feedback
 
 ### Admin Features
-- ✅ Product CRUD (Create, Read, Update, Delete) via web interface
-- ✅ Django admin panel for advanced management
-- ✅ Order management and payment status tracking
-- ✅ Category management
+-   Product CRUD (Create, Read, Update, Delete) via web interface
+-   Django admin panel for advanced management
+-   Order management and payment status tracking
+-   Category management
 
 ### Security Features
-- ✅ Authentication required for cart/checkout
-- ✅ Staff-only access to product management
-- ✅ Environment variables for sensitive data
-- ✅ DEBUG mode disabled in production
-- ✅ CSRF protection on all forms
-- ✅ Password validation and hashing
+-   Authentication required for cart/checkout
+-   Staff-only access to product management
+-   Environment variables for sensitive data
+-   DEBUG mode disabled in production
+-   CSRF protection on all forms
+-   Password validation and hashing
 
 ---
 
@@ -134,7 +134,7 @@ ShopClub provides users with:
 ---
 ## Full Stack Web Application Design & Development
 
-####  ✅ Django Framework with Multiple Apps
+####    Django Framework with Multiple Apps
  
 - **3 Django Apps**: `products`, `orders`, `accounts`
 - Each app is a reusable component with specific responsibility
@@ -148,7 +148,7 @@ shopclub/
 └── accounts/     # User profiles, authentication
 ```
 
-####  ✅ Front-End Design (UX/Accessibility)
+####    Front-End Design (UX/Accessibility)
  
 - Responsive Bootstrap 5 design (mobile-first)
 - Semantic HTML5 markup
@@ -160,7 +160,7 @@ shopclub/
 
 **Code Location:** `templates/` directory with base template and app-specific templates
 
-#### ✅ Full Stack Implementation
+####   Full Stack Implementation
  
 - PostgreSQL relational database (AlwaysData)
 - Interactive frontend with dynamic content
@@ -171,7 +171,7 @@ shopclub/
 **Views:** 20+ view functions  
 **Templates:** 12 HTML templates with Bootstrap 5
 
-#### ✅ Forms with Validation
+####   Forms with Validation
  
 - **ProductForm**: Create/edit products with validation (slug uniqueness, price format)
 - **CheckoutForm**: Shipping information with email/phone validation
@@ -182,7 +182,7 @@ shopclub/
 - `orders/forms.py` - Checkout form with Stripe integration
 - `accounts/forms.py` - Custom signup form
 
-#### ✅ Django File Structure
+####   Django File Structure
  
 ```
 shopclub/
@@ -217,7 +217,7 @@ shopclub/
 └── manage.py
 ```
 
-####  ✅ Consistent URL Patterns
+####    Consistent URL Patterns
  
 - RESTful URL naming conventions
 - Namespaced URLs (`products:cart`, `orders:checkout`)
@@ -226,7 +226,7 @@ shopclub/
 
 **Code Location:** All `urls.py` files use consistent patterns
 
-####  ✅ Navigation & Structured Layout
+####    Navigation & Structured Layout
  
 - Global navigation bar in `base.html`
 - Breadcrumb navigation on product pages
@@ -237,17 +237,17 @@ shopclub/
 **Code Location:** `templates/base.html`
 
 
-####  ✅ Testing Procedures
+####    Testing Procedures
 **Manual Testing Performed:**
-- ✅ User registration and login
-- ✅ Product browsing and filtering
-- ✅ Add to cart functionality
-- ✅ Checkout process with Stripe test cards
-- ✅ Order creation and tracking
-- ✅ Admin product CRUD operations
-- ✅ Form validation (all forms tested with invalid data)
-- ✅ Responsive design (tested on mobile, tablet, desktop)
-- ✅ Browser compatibility (Chrome, Firefox, Safari)
+-   User registration and login
+-   Product browsing and filtering
+-   Add to cart functionality
+-   Checkout process with Stripe test cards
+-   Order creation and tracking
+-   Admin product CRUD operations
+-   Form validation (all forms tested with invalid data)
+-   Responsive design (tested on mobile, tablet, desktop)
+-   Browser compatibility (Chrome, Firefox, Safari)
 
 **Test Card:** 4242 4242 4242 4242 (Stripe test mode)
 
@@ -255,7 +255,7 @@ shopclub/
 
 ###    2: Relational Data Model & Business Logic
 
-#### 2.1 ✅ Relational Database Schema
+#### 2.1   Relational Database Schema
  
 **Database Diagram:**
 ```
@@ -278,7 +278,7 @@ Product
 
 **Code Location:** All `models.py` files
 
-####  ✅ Custom Django Models
+####    Custom Django Models
   **10 custom models created**
 
 1. **Product** (`products/models.py`) - Main product catalog
@@ -295,7 +295,7 @@ Product
 - Properties and methods
 - Meta classes for ordering
 
-#### ✅ Form with Validation for Record Creation
+####   Form with Validation for Record Creation
  
 
 **CustomSignupForm** (`accounts/forms.py`):
@@ -314,16 +314,16 @@ Product
 - Creates Product records
 - Validates: price format, slug uniqueness, stock quantity
 
-#### ✅ Full CRUD Implementation
+####   Full CRUD Implementation
  
 
 | Model | Create | Read | Update | Delete |
 |-------|--------|------|--------|--------|
-| **Product** | ✅ Admin form | ✅ List/Detail views | ✅ Edit form | ✅ Delete confirmation |
-| **Category** | ✅ Admin panel | ✅ Category pages | ✅ Admin panel | ✅ Admin panel |
-| **Cart** | ✅ Add to cart | ✅ Cart view | ✅ Update quantity | ✅ Remove from cart |
-| **Order** | ✅ Checkout | ✅ Order list/detail | ✅ Admin panel | ✅ Admin panel |
-| **UserProfile** | ✅ Auto on signup | ✅ Profile page | ✅ Profile form | ✅ Admin panel |
+| **Product** |   Admin form |   List/Detail views |   Edit form |   Delete confirmation |
+| **Category** |   Admin panel |   Category pages |   Admin panel |   Admin panel |
+| **Cart** |   Add to cart |   Cart view |   Update quantity |   Remove from cart |
+| **Order** |   Checkout |   Order list/detail |   Admin panel |   Admin panel |
+| **UserProfile** |   Auto on signup |   Profile page |   Profile form |   Admin panel |
 
 **Code Evidence:**
 - **Create**: `product_create()`, `add_to_cart()`, `checkout()`
@@ -335,7 +335,7 @@ Product
 
 ### Authentication, Authorization & Permissions
 
-####  ✅ Authentication Mechanism
+####    Authentication Mechanism
  
 - Django Allauth integration for registration/login
 - Custom signup form with extended fields
@@ -353,7 +353,7 @@ Product
 - `accounts/forms.py` - Custom signup form
 - `templates/account/` - Styled login/signup pages
 
-####  ✅ Login/Registration Pages for Anonymous Users Only
+####    Login/Registration Pages for Anonymous Users Only
  
 - Login/Signup links hidden when user is logged in
 - Redirect to home if authenticated user visits login page
@@ -364,7 +364,7 @@ Product
 
 ### E-Commerce Payment System
 
-#### ✅ Stripe Integration
+####   Stripe Integration
  
 - Complete Stripe Checkout implementation
 - Shopping cart checkout flow
@@ -383,7 +383,7 @@ Product
 - `templates/orders/checkout.html` - Stripe.js integration
 - `.env` - Stripe API keys (hidden from git)
 
-#### ✅ Payment Feedback System
+####   Payment Feedback System
  
 
 **Success Flow:**
@@ -409,7 +409,7 @@ Product
 
 ### Version Control & Deployment
 
-#### ✅ Deployed & Tested
+####   Deployed & Tested
  
 - Deployed on AWS EC2 (Ubuntu 22.04)
 - Gunicorn + Nginx production setup
@@ -421,24 +421,24 @@ Product
 **Production URL:** `http://YOUR-EC2-IP`
 
 **Testing Checklist:**
-- ✅ Homepage loads
-- ✅ Product browsing works
-- ✅ User registration/login
-- ✅ Add to cart functionality
-- ✅ Checkout with Stripe
-- ✅ Order creation
-- ✅ Admin panel accessible
-- ✅ Static/media files serve correctly
-- ✅ Database connection stable
+-   Homepage loads
+-   Product browsing works
+-   User registration/login
+-   Add to cart functionality
+-   Checkout with Stripe
+-   Order creation
+-   Admin panel accessible
+-   Static/media files serve correctly
+-   Database connection stable
 
 
 This README includes:
-- ✅ Full deployment procedure (see below)
-- ✅ Database configuration steps
-- ✅ Testing procedures
-- ✅ Application purpose explained
-- ✅ User value proposition
-- ✅ Feature documentation
+-   Full deployment procedure (see below)
+-   Database configuration steps
+-   Testing procedures
+-   Application purpose explained
+-   User value proposition
+-   Feature documentation
 
 ---
 
@@ -518,50 +518,50 @@ This README includes:
 #### Authentication Testing
 | Test | Steps | Expected Result | Status |
 |------|-------|----------------|--------|
-| User Registration | Visit /accounts/signup, fill form | Account created, redirected to home | ✅ Pass |
-| Login | Visit /accounts/login, enter credentials | Logged in, cart available | ✅ Pass |
-| Logout | Click logout | Logged out, cart hidden | ✅ Pass |
-| Anonymous Cart Access | Visit /cart without login | Redirected to login | ✅ Pass |
+| User Registration | Visit /accounts/signup, fill form | Account created, redirected to home |   Pass |
+| Login | Visit /accounts/login, enter credentials | Logged in, cart available |   Pass |
+| Logout | Click logout | Logged out, cart hidden |   Pass |
+| Anonymous Cart Access | Visit /cart without login | Redirected to login |   Pass |
 
 #### Product Management Testing (Admin)
 | Test | Steps | Expected Result | Status |
 |------|-------|----------------|--------|
-| Create Product | Click "Add Product", fill form | Product created | ✅ Pass |
-| Edit Product | Click edit on product page | Changes saved | ✅ Pass |
-| Delete Product | Click delete, confirm | Product removed | ✅ Pass |
-| Non-admin Access | Login as regular user | No admin buttons visible | ✅ Pass |
+| Create Product | Click "Add Product", fill form | Product created |   Pass |
+| Edit Product | Click edit on product page | Changes saved |   Pass |
+| Delete Product | Click delete, confirm | Product removed |   Pass |
+| Non-admin Access | Login as regular user | No admin buttons visible |   Pass |
 
 #### Shopping Cart Testing
 | Test | Steps | Expected Result | Status |
 |------|-------|----------------|--------|
-| Add to Cart | Click "Add to Cart" on product | Item added, quantity correct | ✅ Pass |
-| Update Quantity | Change quantity in cart | Total updates | ✅ Pass |
-| Remove Item | Click remove button | Item deleted from cart | ✅ Pass |
-| Stock Validation | Try to add more than stock | Error message shown | ✅ Pass |
+| Add to Cart | Click "Add to Cart" on product | Item added, quantity correct |   Pass |
+| Update Quantity | Change quantity in cart | Total updates |   Pass |
+| Remove Item | Click remove button | Item deleted from cart |   Pass |
+| Stock Validation | Try to add more than stock | Error message shown |   Pass |
 
 #### Checkout & Payment Testing
 | Test | Steps | Expected Result | Status |
 |------|-------|----------------|--------|
-| Stripe Card Element | Visit checkout | Card form displays | ✅ Pass |
-| Valid Payment | Use test card 4242... | Payment succeeds | ✅ Pass |
-| Invalid Card | Use declined card | Error message shown | ✅ Pass |
-| Order Creation | Successful payment | Order created, cart cleared | ✅ Pass |
-| Payment Status | Check order detail | Shows "Paid" status | ✅ Pass |
+| Stripe Card Element | Visit checkout | Card form displays |   Pass |
+| Valid Payment | Use test card 4242... | Payment succeeds |   Pass |
+| Invalid Card | Use declined card | Error message shown |   Pass |
+| Order Creation | Successful payment | Order created, cart cleared |   Pass |
+| Payment Status | Check order detail | Shows "Paid" status |   Pass |
 
 #### Responsive Design Testing
 | Device | Resolution | Test Result |
 |--------|-----------|-------------|
-| Mobile | 375x667 | ✅ Navbar collapses, all features work |
-| Tablet | 768x1024 | ✅ Layout adjusts, readable text |
-| Desktop | 1920x1080 | ✅ Full layout, all features visible |
+| Mobile | 375x667 |   Navbar collapses, all features work |
+| Tablet | 768x1024 |   Layout adjusts, readable text |
+| Desktop | 1920x1080 |   Full layout, all features visible |
 
 #### Browser Compatibility
 | Browser | Version | Status |
 |---------|---------|--------|
-| Chrome | Latest | ✅ Pass |
-| Firefox | Latest | ✅ Pass |
-| Safari | Latest | ✅ Pass |
-| Edge | Latest | ✅ Pass |
+| Chrome | Latest |   Pass |
+| Firefox | Latest |   Pass |
+| Safari | Latest |   Pass |
+| Edge | Latest |   Pass |
 
 ### Test Cards (Stripe Test Mode)
 - **Success:** 4242 4242 4242 4242
@@ -837,6 +837,7 @@ sudo tail -n 50 /var/log/nginx/access.log
 ```bash
 sudo systemctl restart nginx
 ```
+
 
 
 
