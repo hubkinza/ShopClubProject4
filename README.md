@@ -838,6 +838,31 @@ sudo tail -n 50 /var/log/nginx/access.log
 sudo systemctl restart nginx
 ```
 
+## Credits & Acknowledgements
+
+### Design Inspiration
+- [Figma] – UI/UX design inspiration
+- CSS-Tricks – CSS techniques and best practices
+- **YouTube Tutorials:**
+  - [ShopClub Django E-Commerce Tutorial](https://www.youtube.com/watch?v=u6R4vBa7ZK4)
+  - [Frontend & Styling Reference](https://www.youtube.com/watch?v=5n8FKv19os0&list=PL_KegS2ON4s53FNSqgXFdictTzUbGjoO-)
+
+### Learning Resources
+- Django Documentation – Backend framework reference
+- Flask Documentation – For design pattern concepts
+- PostgreSQL Tutorial – Database management reference
+- MDN Web Docs – HTML, CSS, JavaScript reference
+- **Bootstrap** – Responsive front-end framework used for layout and styling
+
+### AI Assistance
+- ChatGPT (OpenAI) – Assisted with deployment steps and README creation
+- Claude AI (Anthropic) – Assisted with coding guidance, debugging, and database models
+
+### Mentorship & Guidance
+- [Jose Dev](https://github.com/devjldp) – For being a wonderful teacher and guiding me 
+
+### Special Thanks
+- All content creators whose tutorials and examples helped in building ShopClub
 
 
 
