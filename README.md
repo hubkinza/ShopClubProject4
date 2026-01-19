@@ -8,7 +8,7 @@
 - [Purpose & Value](#purpose--value)
 - [Features](#features)
 - [Technology Stack](#technology-stack)
-- [Project Criteria Fulfillment](#project-criteria-fulfillment)
+- [Project    Fulfillment](#project-  -fulfillment)
 - [Database Schema](#database-schema)
 - [Installation & Setup](#installation--setup)
 - [Deployment](#deployment)
@@ -104,8 +104,8 @@ ShopClub provides users with:
 
 ## Full Stack Web Application Design & Development
 
-#### 1.1 ✅ Django Framework with Multiple Apps
-**Evidence:**
+####  ✅ Django Framework with Multiple Apps
+ 
 - **3 Django Apps**: `products`, `orders`, `accounts`
 - Each app is a reusable component with specific responsibility
 - MVC architecture properly implemented
@@ -118,8 +118,8 @@ shopclub/
 └── accounts/     # User profiles, authentication
 ```
 
-#### 1.2 ✅ Front-End Design (UX/Accessibility)
-**Evidence:**
+####  ✅ Front-End Design (UX/Accessibility)
+ 
 - Responsive Bootstrap 5 design (mobile-first)
 - Semantic HTML5 markup
 - ARIA labels for accessibility
@@ -130,8 +130,8 @@ shopclub/
 
 **Code Location:** `templates/` directory with base template and app-specific templates
 
-#### 1.3 ✅ Full Stack Implementation
-**Evidence:**
+#### ✅ Full Stack Implementation
+ 
 - PostgreSQL relational database (AlwaysData)
 - Interactive frontend with dynamic content
 - 3 distinct Django apps with specific purposes
@@ -141,8 +141,8 @@ shopclub/
 **Views:** 20+ view functions  
 **Templates:** 12 HTML templates with Bootstrap 5
 
-#### 1.4 ✅ Forms with Validation
-**Evidence:**
+#### ✅ Forms with Validation
+ 
 - **ProductForm**: Create/edit products with validation (slug uniqueness, price format)
 - **CheckoutForm**: Shipping information with email/phone validation
 - **CustomSignupForm**: User registration with password matching and address validation
@@ -152,8 +152,8 @@ shopclub/
 - `orders/forms.py` - Checkout form with Stripe integration
 - `accounts/forms.py` - Custom signup form
 
-#### 1.5 ✅ Django File Structure
-**Evidence:**
+#### ✅ Django File Structure
+ 
 ```
 shopclub/
 ├── config/              # Project settings
@@ -187,31 +187,8 @@ shopclub/
 └── manage.py
 ```
 
-#### 1.6 ✅ Clean Code Principles
-**Evidence:**
-- Descriptive variable and function names
-- Docstrings for all models and functions
-- DRY (Don't Repeat Yourself) principles
-- Consistent code formatting
-- Separation of concerns (models/views/templates)
-- Comments explaining complex logic
-
-**Example from `products/models.py`:**
-```python
-class Product(models.Model):
-    """Product model with CRUD functionality"""
-    # Clear field names and types
-    name = models.CharField(max_length=200)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    
-    @property
-    def in_stock(self):
-        """Check if product is in stock"""
-        return self.stock > 0 and self.available
-```
-
-#### 1.7 ✅ Consistent URL Patterns
-**Evidence:**
+####  ✅ Consistent URL Patterns
+ 
 - RESTful URL naming conventions
 - Namespaced URLs (`products:cart`, `orders:checkout`)
 - Descriptive path names
@@ -219,8 +196,8 @@ class Product(models.Model):
 
 **Code Location:** All `urls.py` files use consistent patterns
 
-#### 1.8 ✅ Navigation & Structured Layout
-**Evidence:**
+####  ✅ Navigation & Structured Layout
+ 
 - Global navigation bar in `base.html`
 - Breadcrumb navigation on product pages
 - Consistent header and footer across all pages
@@ -229,46 +206,8 @@ class Product(models.Model):
 
 **Code Location:** `templates/base.html`
 
-#### 1.9 ✅ Custom Python Logic
-**Evidence:**
-- Custom order number generation (UUID-based)
-- Automatic slug generation from product names
-- Stock validation and inventory management
-- Shopping cart total calculations
-- Payment intent creation with Stripe API
-- User profile auto-creation via signals
 
-**Example from `orders/models.py`:**
-```python
-def save(self, *args, **kwargs):
-    """Generate order number if not exists"""
-    if not self.order_number:
-        import uuid
-        self.order_number = f"ORD-{uuid.uuid4().hex[:8].upper()}"
-    super().save(*args, **kwargs)
-```
-
-#### 1.10 ✅ Python Compound Statements
-**Evidence:**
-- If/elif/else conditions throughout views
-- For loops for template rendering and data processing
-- Try/except blocks for error handling
-- List comprehensions for data filtering
-- Context managers for file operations
-
-**Example from `products/views.py`:**
-```python
-# Price filter with conditional logic
-if min_price:
-    products = products.filter(price__gte=min_price)
-if max_price:
-    products = products.filter(price__lte=max_price)
-
-# Loop for cart total calculation
-subtotal = sum(item.total_price for item in cart_items)
-```
-
-#### 1.11 ✅ Testing Procedures
+####  ✅ Testing Procedures
 **Manual Testing Performed:**
 - ✅ User registration and login
 - ✅ Product browsing and filtering
@@ -284,24 +223,10 @@ subtotal = sum(item.total_price for item in cart_items)
 
 ---
 
-### Criteria 2: Relational Data Model & Business Logic
+###    2: Relational Data Model & Business Logic
 
 #### 2.1 ✅ Relational Database Schema
-**Evidence:**
-
-**Relationships:**
-- **One-to-Many**: 
-  - Category → Products
-  - User → Orders
-  - Order → OrderItems
-  - User → Cart Items
-- **Many-to-One**: 
-  - Products → Category
-  - Cart → User
-  - Cart → Product
-- **One-to-One**: 
-  - User ↔ UserProfile
-
+ 
 **Database Diagram:**
 ```
 User (Django Auth)
@@ -323,8 +248,8 @@ Product
 
 **Code Location:** All `models.py` files
 
-#### 2.2 ✅ Two+ Custom Django Models
-**Evidence:** **10 custom models created**
+####  ✅ Custom Django Models
+  **10 custom models created**
 
 1. **Product** (`products/models.py`) - Main product catalog
 2. **Category** (`products/models.py`) - Product categorization
@@ -340,8 +265,8 @@ Product
 - Properties and methods
 - Meta classes for ordering
 
-#### 2.3 ✅ Form with Validation for Record Creation
-**Evidence:**
+#### ✅ Form with Validation for Record Creation
+ 
 
 **CustomSignupForm** (`accounts/forms.py`):
 - Creates User records in database
@@ -359,8 +284,8 @@ Product
 - Creates Product records
 - Validates: price format, slug uniqueness, stock quantity
 
-#### 2.4 ✅ Full CRUD Implementation
-**Evidence:**
+#### ✅ Full CRUD Implementation
+ 
 
 | Model | Create | Read | Update | Delete |
 |-------|--------|------|--------|--------|
@@ -378,10 +303,10 @@ Product
 
 ---
 
-### Criteria 3: Authentication, Authorization & Permissions
+### Authentication, Authorization & Permissions
 
-#### 3.1 ✅ Authentication Mechanism
-**Evidence:**
+####  ✅ Authentication Mechanism
+ 
 - Django Allauth integration for registration/login
 - Custom signup form with extended fields
 - Password validation and hashing
@@ -398,46 +323,19 @@ Product
 - `accounts/forms.py` - Custom signup form
 - `templates/account/` - Styled login/signup pages
 
-#### 3.2 ✅ Login/Registration Pages for Anonymous Users Only
-**Evidence:**
+####  ✅ Login/Registration Pages for Anonymous Users Only
+ 
 - Login/Signup links hidden when user is logged in
 - Redirect to home if authenticated user visits login page
 - Navbar dynamically shows Login/Signup OR Profile/Logout
-
-**Code in `base.html`:**
-```django
-{% if user.is_authenticated %}
-    <!-- Show Profile, Cart, Logout -->
-{% else %}
-    <!-- Show Login, Sign Up -->
-{% endif %}
-```
-
-#### 3.3 ✅ Prevent Direct Data Store Access
-**Evidence:**
-- `@login_required` decorators on sensitive views
-- `@staff_member_required` for admin product management
-- Django admin requires superuser/staff status
-- CSRF protection on all forms
-- Database credentials in environment variables
-
-**Examples:**
-```python
-@login_required
-def cart(request):
-    """Only logged-in users can view cart"""
-    
-@staff_member_required
-def product_create(request):
-    """Only staff can create products"""
-```
+  
 
 ---
 
-### Criteria 4: E-Commerce Payment System
+### E-Commerce Payment System
 
-#### 4.1 ✅ Stripe Integration
-**Evidence:**
+#### ✅ Stripe Integration
+ 
 - Complete Stripe Checkout implementation
 - Shopping cart checkout flow
 - Payment Intent creation via API
@@ -455,8 +353,8 @@ def product_create(request):
 - `templates/orders/checkout.html` - Stripe.js integration
 - `.env` - Stripe API keys (hidden from git)
 
-#### 4.2 ✅ Payment Feedback System
-**Evidence:**
+#### ✅ Payment Feedback System
+ 
 
 **Success Flow:**
 1. Payment processes successfully
@@ -479,10 +377,10 @@ def product_create(request):
 
 ---
 
-### Criteria 5: Version Control & Deployment
+### Version Control & Deployment
 
-#### 5.1 ✅ Deployed & Tested
-**Evidence:**
+#### ✅ Deployed & Tested
+ 
 - Deployed on AWS EC2 (Ubuntu 22.04)
 - Gunicorn + Nginx production setup
 - AlwaysData PostgreSQL database
@@ -503,87 +401,7 @@ def product_create(request):
 - ✅ Static/media files serve correctly
 - ✅ Database connection stable
 
-#### 5.2 ✅ Clean Deployed Code
-**Evidence:**
-- No commented-out code in production
-- All internal links functional
-- No broken images or 404 errors
-- `.gitignore` properly configured
-- Unused code removed
 
-**Verification:**
-```bash
-# Search for commented code
-grep -r "#.*TODO" shopclub/
-# Result: None found
-
-# Check for broken links
-# All navbar and footer links tested manually
-```
-
-#### 5.3 ✅ Security in Deployment
-**Evidence:**
-
-**Environment Variables (.env):**
-```env
-SECRET_KEY=hidden-in-env
-DEBUG=False
-DB_PASSWORD=hidden-in-env
-STRIPE_SECRET_KEY=hidden-in-env
-```
-
-**Gitignore includes:**
-```
-.env
-*.pyc
-db.sqlite3
-/media/
-__pycache__/
-```
-
-**Security Measures:**
-- ✅ DEBUG=False in production
-- ✅ SECRET_KEY in environment variables
-- ✅ Database password not in code
-- ✅ Stripe keys in .env file
-- ✅ .env file in .gitignore
-- ✅ CSRF protection enabled
-- ✅ Allowed hosts configured
-
-#### 5.4 ✅ Git Version Control
-**Evidence:**
-- Regular commits throughout development
-- Descriptive commit messages
-- Branching for features (if applicable)
-- .gitignore properly configured
-- README.md documentation
-
-**Commit History Examples:**
-```
-- Initial project setup
-- Add product models and admin
-- Implement cart functionality
-- Integrate Stripe payments
-- Deploy to AWS EC2
-```
-
-#### 5.5 ✅ Well-Structured README
-**Evidence:**
-- Markdown formatting used consistently
-- Clear sections and table of contents
-- Code blocks with syntax highlighting
-- Organized information hierarchy
-- Professional presentation
-
-**This README demonstrates:**
-- Proper headings (H1, H2, H3)
-- Lists (ordered and unordered)
-- Code blocks with language specification
-- Tables for data presentation
-- Links and navigation
-
-#### 5.6 ✅ Deployment & Testing Documentation
-**Evidence:**
 This README includes:
 - ✅ Full deployment procedure (see below)
 - ✅ Database configuration steps
@@ -662,6 +480,67 @@ This README includes:
 
 ---
 
+
+## Testing
+
+### Manual Testing Procedures
+
+#### Authentication Testing
+| Test | Steps | Expected Result | Status |
+|------|-------|----------------|--------|
+| User Registration | Visit /accounts/signup, fill form | Account created, redirected to home | ✅ Pass |
+| Login | Visit /accounts/login, enter credentials | Logged in, cart available | ✅ Pass |
+| Logout | Click logout | Logged out, cart hidden | ✅ Pass |
+| Anonymous Cart Access | Visit /cart without login | Redirected to login | ✅ Pass |
+
+#### Product Management Testing (Admin)
+| Test | Steps | Expected Result | Status |
+|------|-------|----------------|--------|
+| Create Product | Click "Add Product", fill form | Product created | ✅ Pass |
+| Edit Product | Click edit on product page | Changes saved | ✅ Pass |
+| Delete Product | Click delete, confirm | Product removed | ✅ Pass |
+| Non-admin Access | Login as regular user | No admin buttons visible | ✅ Pass |
+
+#### Shopping Cart Testing
+| Test | Steps | Expected Result | Status |
+|------|-------|----------------|--------|
+| Add to Cart | Click "Add to Cart" on product | Item added, quantity correct | ✅ Pass |
+| Update Quantity | Change quantity in cart | Total updates | ✅ Pass |
+| Remove Item | Click remove button | Item deleted from cart | ✅ Pass |
+| Stock Validation | Try to add more than stock | Error message shown | ✅ Pass |
+
+#### Checkout & Payment Testing
+| Test | Steps | Expected Result | Status |
+|------|-------|----------------|--------|
+| Stripe Card Element | Visit checkout | Card form displays | ✅ Pass |
+| Valid Payment | Use test card 4242... | Payment succeeds | ✅ Pass |
+| Invalid Card | Use declined card | Error message shown | ✅ Pass |
+| Order Creation | Successful payment | Order created, cart cleared | ✅ Pass |
+| Payment Status | Check order detail | Shows "Paid" status | ✅ Pass |
+
+#### Responsive Design Testing
+| Device | Resolution | Test Result |
+|--------|-----------|-------------|
+| Mobile | 375x667 | ✅ Navbar collapses, all features work |
+| Tablet | 768x1024 | ✅ Layout adjusts, readable text |
+| Desktop | 1920x1080 | ✅ Full layout, all features visible |
+
+#### Browser Compatibility
+| Browser | Version | Status |
+|---------|---------|--------|
+| Chrome | Latest | ✅ Pass |
+| Firefox | Latest | ✅ Pass |
+| Safari | Latest | ✅ Pass |
+| Edge | Latest | ✅ Pass |
+
+### Test Cards (Stripe Test Mode)
+- **Success:** 4242 4242 4242 4242
+- **Decline:** 4000 0000 0000 0002
+- **Insufficient Funds:** 4000 0000 0000 9995
+
+**Any future date for expiry, any 3 digits for CVC**
+
+---
 ## Installation & Setup
 
 ### Prerequisites
@@ -734,6 +613,9 @@ python manage.py runserver
 
 Visit: `http://127.0.0.1:8000`
 
+## Prerequisites
+- Ubuntu server (AWS EC2 or similar)
+
 ---
 
 ## Deployment
@@ -773,239 +655,7 @@ pip install -r requirements.txt
 pip install gunicorn
 ```
 
-#### 5. Create Production .env
-```bash
-nano .env
-```
 
-```env
-SECRET_KEY=generate-new-secret-key
-DEBUG=False
-ALLOWED_HOSTS=YOUR-EC2-IP
-
-DB_NAME=kinzaqureshi_shopclub
-DB_USER=kinzaqureshi
-DB_PASSWORD=Shopclub123
-DB_HOST=postgresql-kinzaqureshi.alwaysdata.net
-DB_PORT=5432
-
-STRIPE_PUBLISHABLE_KEY=pk_test_your_key
-STRIPE_SECRET_KEY=sk_test_your_key
-```
-
-#### 6. Run Migrations & Collect Static
-```bash
-python3 manage.py migrate
-python3 manage.py createsuperuser
-python3 manage.py collectstatic --noinput
-```
-
-#### 7. Configure Gunicorn Socket
-```bash
-sudo nano /etc/systemd/system/gunicorn.socket
-```
-
-```ini
-[Unit]
-Description=gunicorn socket
-
-[Socket]
-ListenStream=/run/gunicorn.sock
-
-[Install]
-WantedBy=sockets.target
-```
-
-#### 8. Configure Gunicorn Service
-```bash
-sudo nano /etc/systemd/system/gunicorn.service
-```
-
-```ini
-[Unit]
-Description=gunicorn daemon
-Requires=gunicorn.socket
-After=network.target
-
-[Service]
-User=ubuntu
-Group=www-data
-WorkingDirectory=/var/www/shopclub
-ExecStart=/var/www/shopclub/venv/bin/gunicorn \
-          --access-logfile - \
-          --workers 3 \
-          --bind unix:/run/gunicorn.sock \
-          config.wsgi:application
-
-[Install]
-WantedBy=multi-user.target
-```
-
-#### 9. Start Gunicorn
-```bash
-sudo systemctl start gunicorn.socket
-sudo systemctl enable gunicorn.socket
-sudo systemctl status gunicorn.socket
-```
-
-#### 10. Configure Nginx
-```bash
-sudo nano /etc/nginx/sites-available/shopclub
-```
-
-```nginx
-server {
-    listen 80;
-    server_name YOUR-EC2-IP;
-
-    location = /favicon.ico { access_log off; log_not_found off; }
-    
-    location /static/ {
-        alias /var/www/shopclub/staticfiles/;
-    }
-
-    location /media/ {
-        alias /var/www/shopclub/media/;
-    }
-
-    location / {
-        include proxy_params;
-        proxy_pass http://unix:/run/gunicorn.sock;
-    }
-}
-```
-
-#### 11. Enable Site
-```bash
-sudo ln -s /etc/nginx/sites-available/shopclub /etc/nginx/sites-enabled/
-sudo nginx -t
-sudo systemctl restart nginx
-```
-
-#### 12. Configure Firewall
-```bash
-sudo ufw allow 'Nginx Full'
-sudo ufw delete allow 8000
-```
-
-#### 13. Set Permissions
-```bash
-sudo chown -R ubuntu:www-data /var/www/shopclub
-sudo chmod -R 755 /var/www/shopclub
-sudo chmod -R 775 /var/www/shopclub/media
-```
-
-#### 14. Update Nginx User
-```bash
-sudo nano /etc/nginx/nginx.conf
-# Change: user www-data; to: user ubuntu;
-sudo systemctl restart nginx
-```
-
-**Your site is now live at:** `http://YOUR-EC2-IP`
-
----
-
-## Testing
-
-### Manual Testing Procedures
-
-#### Authentication Testing
-| Test | Steps | Expected Result | Status |
-|------|-------|----------------|--------|
-| User Registration | Visit /accounts/signup, fill form | Account created, redirected to home | ✅ Pass |
-| Login | Visit /accounts/login, enter credentials | Logged in, cart available | ✅ Pass |
-| Logout | Click logout | Logged out, cart hidden | ✅ Pass |
-| Anonymous Cart Access | Visit /cart without login | Redirected to login | ✅ Pass |
-
-#### Product Management Testing (Admin)
-| Test | Steps | Expected Result | Status |
-|------|-------|----------------|--------|
-| Create Product | Click "Add Product", fill form | Product created | ✅ Pass |
-| Edit Product | Click edit on product page | Changes saved | ✅ Pass |
-| Delete Product | Click delete, confirm | Product removed | ✅ Pass |
-| Non-admin Access | Login as regular user | No admin buttons visible | ✅ Pass |
-
-#### Shopping Cart Testing
-| Test | Steps | Expected Result | Status |
-|------|-------|----------------|--------|
-| Add to Cart | Click "Add to Cart" on product | Item added, quantity correct | ✅ Pass |
-| Update Quantity | Change quantity in cart | Total updates | ✅ Pass |
-| Remove Item | Click remove button | Item deleted from cart | ✅ Pass |
-| Stock Validation | Try to add more than stock | Error message shown | ✅ Pass |
-
-#### Checkout & Payment Testing
-| Test | Steps | Expected Result | Status |
-|------|-------|----------------|--------|
-| Stripe Card Element | Visit checkout | Card form displays | ✅ Pass |
-| Valid Payment | Use test card 4242... | Payment succeeds | ✅ Pass |
-| Invalid Card | Use declined card | Error message shown | ✅ Pass |
-| Order Creation | Successful payment | Order created, cart cleared | ✅ Pass |
-| Payment Status | Check order detail | Shows "Paid" status | ✅ Pass |
-
-#### Responsive Design Testing
-| Device | Resolution | Test Result |
-|--------|-----------|-------------|
-| Mobile | 375x667 | ✅ Navbar collapses, all features work |
-| Tablet | 768x1024 | ✅ Layout adjusts, readable text |
-| Desktop | 1920x1080 | ✅ Full layout, all features visible |
-
-#### Browser Compatibility
-| Browser | Version | Status |
-|---------|---------|--------|
-| Chrome | Latest | ✅ Pass |
-| Firefox | Latest | ✅ Pass |
-| Safari | Latest | ✅ Pass |
-| Edge | Latest | ✅ Pass |
-
-### Test Cards (Stripe Test Mode)
-- **Success:** 4242 4242 4242 4242
-- **Decline:** 4000 0000 0000 0002
-- **Insufficient Funds:** 4000 0000 0000 9995
-
-**Any future date for expiry, any 3 digits for CVC**
-
----
-
-## Project Structure
-
-```
-shopclub/
-├── config/                      # Project configuration
-│   ├── settings.py             # Django settings
-│   ├── urls.py                 # Main URL configuration
-│   ├── wsgi.py                 # WSGI configuration
-│   └── asgi.py                 # ASGI configuration
-├── products/                    # Products app
-│   ├── models.py               # Product, Category, Cart models
-│   ├── views.py                # Product views (CRUD, cart)
-│   ├── urls.py                 # Product URL patterns
-│   ├── admin.py                # Admin configuration
-│   ├── forms.py                # Product forms
-│   └── context_processors.py  # Cart count context
-├── orders/                      # Orders app
-│   ├── models.py               # Order, OrderItem models
-# Deployment Guide
-
-## Prerequisites
-- Ubuntu server (AWS EC2 or similar)
-
-
-
-## 1. Server Setup
-
-### Update system packages
-```bash
-sudo apt update
-sudo apt upgrade -y
-```
-
-### Install required packages
-```bash
-sudo apt install python3-pip python3-venv nginx -y
-```
-
-## 2. Project Setup
 
 ### Clone your repository
 ```bash
@@ -1133,7 +783,7 @@ sudo systemctl status gunicorn
 sudo systemctl status nginx
 ```
 
-Visit your site at `http://your-ip-address`
+Visit  site at `http://13.60.188.35/`
 
 ## Managing the Application
 
@@ -1158,26 +808,6 @@ sudo tail -n 50 /var/log/nginx/access.log
 sudo systemctl restart nginx
 ```
 
-## Troubleshooting
 
-### 502 Bad Gateway Error
-- Check Gunicorn status: `sudo systemctl status gunicorn`
-- Check permissions on socket file: `ls -la /home/ubuntu/ShopClubProject4/shopclub.sock`
-- Check Nginx error logs: `sudo tail -n 100 /var/log/nginx/error.log`
-
-### Static files not loading
-- Run `python manage.py collectstatic`
-- Check Nginx configuration for correct static file path
-- Verify file permissions
-
-### Application changes not reflecting
-```bash
-git pull
-source venv/bin/activate
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py collectstatic
-sudo systemctl restart gunicorn
-```
 
 
