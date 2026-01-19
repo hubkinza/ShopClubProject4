@@ -1,21 +1,10 @@
 
 # ShopClub - E-Commerce Django Application
 
-![ShopClub Banner](http://13.60.188.35/)
+<img width="2940" height="1588" alt="image" src="https://github.com/user-attachments/assets/41047133-5fe0-4a53-ba40-2a3c64c79538" />
 
-## Table of Contents
-- [Project Overview](#project-overview)
-- [Purpose & Value](#purpose--value)
-- [Features](#features)
-- [Technology Stack](#technology-stack)
-- [Project    Fulfillment](#project-  -fulfillment)
-- [Database Schema](#database-schema)
-- [Installation & Setup](#installation--setup)
-- [Deployment](#deployment)
-- [Testing](#testing)
-- [Credits](#credits)
 
----
+
 
 ## Project Overview
 
@@ -101,7 +90,36 @@ ShopClub provides users with:
 - **Python-decouple 3.8** - Environment variable management
 
 ---
+## Screenshots
 
+### Homepage
+<img width="2940" height="1580" alt="image" src="https://github.com/user-attachments/assets/1554af41-cd9d-4fc8-b6ae-deb51cf37445" />
+
+
+### Product Catalog
+<img width="2934" height="1478" alt="image" src="https://github.com/user-attachments/assets/f40feb51-9b59-44fb-9de9-783220663998" />
+
+
+### Shopping Cart
+<img width="2940" height="1590" alt="image" src="https://github.com/user-attachments/assets/709c4a4c-d06d-4030-b005-a361d6c38bb1" />
+
+
+### Checkout Process
+<img width="2940" height="1588" alt="image" src="https://github.com/user-attachments/assets/fb4ef617-0a8d-4ccf-8380-17ef4cef2fd3" />
+
+
+### Order Confirmation
+<img width="2940" height="1750" alt="image" src="https://github.com/user-attachments/assets/f0ee7f4a-78ae-4ea7-be24-47e000045fbd" />
+
+
+### Admin Product Management
+
+<img width="2930" height="1548" alt="image" src="https://github.com/user-attachments/assets/bec4e07c-b4d3-42e8-a1cf-9a4bbff19a86" />
+
+<img width="2940" height="1584" alt="image" src="https://github.com/user-attachments/assets/69d2c3ee-839d-4177-b99a-af99dae6521d" />
+
+
+---
 ## Full Stack Web Application Design & Development
 
 ####  ✅ Django Framework with Multiple Apps
@@ -807,6 +825,7 @@ sudo tail -n 50 /var/log/nginx/access.log
 ```bash
 sudo systemctl restart nginx
 ```
+
 
 
 
