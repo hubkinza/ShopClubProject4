@@ -2,8 +2,8 @@
 
 ## Prerequisites
 - Ubuntu server (AWS EC2 or similar)
-- Python 3.8+
-- Domain name (optional but recommended)
+
+
 
 ## 1. Server Setup
 
@@ -137,27 +137,6 @@ sudo chmod 755 /home/ubuntu/ShopClubProject4
 sudo usermod -aG ubuntu www-data
 ```
 
-## 6. Firewall Setup
-
-### Configure UFW firewall
-```bash
-sudo ufw allow 22/tcp    # SSH
-sudo ufw allow 80/tcp    # HTTP
-sudo ufw allow 443/tcp   # HTTPS
-sudo ufw enable
-```
-
-## 7. SSL Setup (Optional but Recommended)
-
-### Install Certbot
-```bash
-sudo apt install certbot python3-certbot-nginx -y
-```
-
-### Obtain SSL certificate
-```bash
-sudo certbot --nginx -d your-domain.com
-```
 
 ## 8. Verify Deployment
 
@@ -167,7 +146,7 @@ sudo systemctl status gunicorn
 sudo systemctl status nginx
 ```
 
-Visit your site at `http://your-domain.com` or `http://your-ip-address`
+Visit your site at `http://your-ip-address`
 
 ## Managing the Application
 
@@ -213,3 +192,4 @@ python manage.py migrate
 python manage.py collectstatic
 sudo systemctl restart gunicorn
 ```
+
