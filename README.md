@@ -833,7 +833,7 @@ sudo tail -n 50 /var/log/nginx/access.log
 sudo systemctl restart nginx
 ```
 
-## Credits & Acknowledgements
+# Credits & Acknowledgements 💡
 
 ### Design Inspiration
 - [Figma] – UI/UX design inspiration
@@ -858,6 +858,7 @@ sudo systemctl restart nginx
 
 ### Special Thanks
 - All content creators whose tutorials and examples helped in building ShopClub
+
 
 
 
